@@ -1,0 +1,6 @@
+{
+  "installCommand": "bun install --cwd web --frozen-lockfile",
+  "buildCommand": "bun run --cwd web build",
+  "outputDirectory": "web/dist",
+  "cleanUrls": false
+}
