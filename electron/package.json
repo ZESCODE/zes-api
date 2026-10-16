@@ -18,7 +18,10 @@
     "openai",
     "claude"
   ],
-  "author": "QuantumNous",
+  "author": {
+    "name": "QuantumNous",
+    "email": "support@new-api.org"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/QuantumNous/new-api"
@@ -118,8 +121,7 @@
     "linux": {
       "icon": "icon.png",
       "target": [
-        "AppImage",
-        "deb"
+        "AppImage"
       ],
       "category": "Development",
       "extraResources": [
