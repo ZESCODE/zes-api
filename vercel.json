@@ -1,6 +1,11 @@
 {
+  "framework": null,
   "installCommand": "bun install --cwd web --frozen-lockfile",
   "buildCommand": "bun run --cwd web build",
   "outputDirectory": "web/dist",
-  "cleanUrls": false
+  "cleanUrls": false,
+  "rewrites": [{
+    "source": "/((?!static/|favicon\\.ico$).*)",
+    "destination": "/index.html"
+  }]
 }
