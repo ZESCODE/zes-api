@@ -4,8 +4,14 @@
   "buildCommand": "bun run --cwd web build",
   "outputDirectory": "web/dist",
   "cleanUrls": false,
-  "rewrites": [{
-    "source": "/((?!static/|favicon\\.ico$|index\\.html$).*)",
-    "destination": "/index.html"
-  }]
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://newapi.zes.codes/api/:path*"
+    },
+    {
+      "source": "/((?!static/|favicon\\.ico$|index\\.html$).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
