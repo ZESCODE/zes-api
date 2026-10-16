@@ -5,7 +5,7 @@
   "outputDirectory": "web/dist",
   "cleanUrls": false,
   "rewrites": [{
-    "source": "/((?!static/|favicon\\.ico$).*)",
+    "source": "/((?!static/|favicon\\.ico$|index\\.html$).*)",
     "destination": "/index.html"
   }]
 }
