@@ -80,7 +80,7 @@ export function Hero(props: HeroProps) {
   }
 
   return (
-    <section className='relative z-10 overflow-hidden px-6 pt-24 pb-16 md:pt-32 md:pb-24 lg:pt-36 lg:pb-28'>
+    <section className='relative z-10 overflow-hidden px-5 pt-20 pb-14 sm:px-6 md:pt-28 md:pb-24 lg:pt-36 lg:pb-28'>
       {/* Radial gradient background */}
       <div
         aria-hidden
