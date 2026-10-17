@@ -7,7 +7,31 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://newapi.zes.codes/api/:path*"
+      "destination": "https://api.zes.codes/api/:path*"
+    },
+    {
+      "source": "/pg/:path*",
+      "destination": "https://api.zes.codes/pg/:path*"
+    },
+    {
+      "source": "/dashboard/:path*",
+      "destination": "https://api.zes.codes/dashboard/:path*"
+    },
+    {
+      "source": "/v1/:path*",
+      "destination": "https://api.zes.codes/v1/:path*"
+    },
+    {
+      "source": "/v1beta/:path*",
+      "destination": "https://api.zes.codes/v1beta/:path*"
+    },
+    {
+      "source": "/mj/:path*",
+      "destination": "https://api.zes.codes/mj/:path*"
+    },
+    {
+      "source": "/:mode/mj/:path*",
+      "destination": "https://api.zes.codes/:mode/mj/:path*"
     },
     {
       "source": "/((?!static/|favicon\\.ico$|index\\.html$).*)",
