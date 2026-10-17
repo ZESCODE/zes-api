@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "model-routing",
+    "title": "Model Routing & Provider Selection in the ZES AI Gateway",
+    "excerpt": "How to route requests across OpenAI, Claude, Gemini, Azure, and AWS Bedrock — with cost, latency, and capability-based rules.",
+    "content": "# Model Routing & Provider Selection in the ZES AI Gateway\n\nThe ZES AI gateway aggregates 40+ upstream AI providers — OpenAI, Claude, Gemini, Azure, AWS Bedrock, and more — behind a single OpenAI-compatible API. But not every request should hit your most capable (and most expensive) model. Smart routing is how you control spend and latency without degrading quality.\n\n## Why route by model\n\nDifferent tasks need different models:\n\n- Classification, extraction, and short summarization → smaller, cheaper models\n- Complex reasoning, coding, and creative writing → flagship models\n- High-volume, latency-sensitive traffic → fast, inexpensive models\n\nRouting lets you match the model to the task rather than defaulting to your most expensive option for everything.\n\n## Define routing rules\n\nYou can define routing rules in the admin dashboard based on:\n\n- Request intent or keywords\n- User tier or plan\n- Time of day or traffic volume\n- Desired cost ceiling or latency budget\n\n```json\n{\n  \"model\": \"gpt-4o-mini\",\n  \"route\": \"cost-optimized\"\n}\n```\n\n## Fallback and reliability\n\nThe gateway can fall back to a secondary provider if the primary returns an error or hits rate limits. Configure fallback chains per model family so a single provider outage doesn't take down your application.\n\n## Measure, then optimize\n\nEnable usage logging and review the analytics dashboard to see which models and providers drive the most cost and latency. Route based on real data, not assumptions — then revisit your rules as new models and pricing become available.",
+    "author": {
+      "name": "ZES Team",
+      "role": "Engineering",
+      "avatar": "/placeholder-logo.svg"
+    },
+    "category": "Engineering",
+    "publishedAt": "2026-10-17",
+    "readTime": "7 min read",
+    "coverImage": "/placeholder.svg",
+    "featured": false,
+    "draft": false
+  },
+  {
+    "slug": "getting-started",
+    "title": "Getting Started with the ZES AI Gateway",
+    "excerpt": "Learn how to deploy and configure the ZES AI API gateway, connect upstream providers, and start routing requests in minutes.",
+    "content": "# Getting Started with the ZES AI Gateway\n\nThe ZES AI gateway aggregates 40+ upstream AI providers — OpenAI, Claude, Gemini, Azure, AWS Bedrock, and more — behind a single unified API. With user management, billing, rate limiting, and an admin dashboard, it's designed to be the control plane for your AI infrastructure.\n\n## Prerequisites\n\nBefore you begin, make sure you have:\n\n- **Node.js / Bun** installed\n- A running instance of the ZES gateway (Docker is the fastest way)\n- API keys for at least one upstream provider\n\n## 1. Run the gateway\n\nThe quickest way to get started is with Docker Compose:\n\n```bash\ngit clone https://github.com/zesai/zes-api.git\ncd zes-api\ncp .env.example .env\n# Edit .env with your provider API keys\ndocker compose up -d\n```\n\n## 2. Configure providers\n\nProviders are configured through the admin dashboard at `/system-settings/providers`. Add your API keys, set routing rules, and enable the models you want to expose.\n\n## 3. Make your first request\n\nOnce the gateway is running, you can call it like any OpenAI-compatible endpoint:\n\n```bash\ncurl http://localhost:3000/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -d '{\n    \"model\": \"gpt-4o-mini\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello, ZES!\"}]\n  }'\n```\n\n## What's next\n\nFrom here you can set up billing, create API keys for your team, enable rate limiting, and explore the full relay capabilities. See the [system settings](/dashboard/system-settings) guide for more.",
+    "author": {
+      "name": "ZES Team",
+      "role": "Engineering",
+      "avatar": "/placeholder-logo.svg"
+    },
+    "category": "Getting Started",
+    "publishedAt": "2026-10-15",
+    "readTime": "6 min read",
+    "coverImage": "/placeholder.svg",
+    "featured": true,
+    "draft": false
+  },
+  {
+    "slug": "reducing-ai-costs",
+    "title": "Reducing AI Costs Without Sacrificing Quality",
+    "excerpt": "Strategies for model routing, caching, and rate limiting that cut LLM spend while keeping response quality high.",
+    "content": "# Reducing AI Costs Without Sacrificing Quality\n\nLarge language model usage can become expensive quickly, especially at scale. The ZES gateway includes several built-in mechanisms to help you control spend without degrading the user experience.\n\n## Smart model routing\n\nNot every request needs your most capable (and most expensive) model. Route simple tasks — classification, extraction, short summaries — to smaller, cheaper models, and reserve flagship models for complex reasoning.\n\nYou can define routing rules in the gateway based on:\n\n- Request intent or keywords\n- User tier or plan\n- Time of day or traffic volume\n\n```json\n{\n  \"model\": \"gpt-4o-mini\",\n  \"route\": \"cost-optimized\"\n}\n```\n\n## Response caching\n\nCache repeated completions so identical prompts don't hit the upstream provider twice. The gateway supports semantic and exact-match caching with configurable TTLs.\n\n## Rate limiting\n\nPer-user and per-key rate limits prevent runaway consumption from a single client. Combine these with quotas and alerts to stay ahead of surprise bills.\n\n## Measure, then optimize\n\nEnable usage logging and review the analytics dashboard to see which models and users drive the most cost. Optimize based on real data, not assumptions.",
+    "author": {
+      "name": "ZES Team",
+      "role": "Engineering",
+      "avatar": "/placeholder-logo.svg"
+    },
+    "category": "Cost Optimization",
+    "publishedAt": "2026-10-10",
+    "readTime": "8 min read",
+    "coverImage": "/placeholder.svg",
+    "featured": false,
+    "draft": false
+  }
+]
