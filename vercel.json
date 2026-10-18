@@ -7,31 +7,31 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://api.zes.codes/api/:path*"
+      "destination": "https://zes-api.bonto.run/api/:path*"
     },
     {
       "source": "/pg/:path*",
-      "destination": "https://api.zes.codes/pg/:path*"
+      "destination": "https://zes-api.bonto.run/pg/:path*"
     },
     {
       "source": "/dashboard/:path*",
-      "destination": "https://api.zes.codes/dashboard/:path*"
+      "destination": "https://zes-api.bonto.run/dashboard/:path*"
     },
     {
       "source": "/v1/:path*",
-      "destination": "https://api.zes.codes/v1/:path*"
+      "destination": "https://zes-api.bonto.run/v1/:path*"
     },
     {
       "source": "/v1beta/:path*",
-      "destination": "https://api.zes.codes/v1beta/:path*"
+      "destination": "https://zes-api.bonto.run/v1beta/:path*"
     },
     {
       "source": "/mj/:path*",
-      "destination": "https://api.zes.codes/mj/:path*"
+      "destination": "https://zes-api.bonto.run/mj/:path*"
     },
     {
       "source": "/:mode/mj/:path*",
-      "destination": "https://api.zes.codes/:mode/mj/:path*"
+      "destination": "https://zes-api.bonto.run/:mode/mj/:path*"
     },
     {
       "source": "/((?!static/|favicon\\.ico$|index\\.html$).*)",
