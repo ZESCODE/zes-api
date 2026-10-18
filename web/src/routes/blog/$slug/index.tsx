@@ -24,7 +24,7 @@ import { getBlogPost, getBlogPosts } from '@/features/blog/lib/blog'
 import { Markdown } from '@/components/ui/markdown'
 import { Badge } from '@/components/ui/badge'
 
-export const Route = createFileRoute('/blog/$slug')({
+export const Route = createFileRoute('/blog/$slug/')({
   beforeLoad: ({ params }) => {
     const post = getBlogPost(params.slug)
     if (!post) {
